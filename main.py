@@ -20,9 +20,9 @@ def welcome(message):
     # Разделяю кнопки по строкам так, чтобы товары были отдельно от остальных кнопок
     markup.row(button1,button2,button3)
     if message.text == '/start':
-        bot.send_message(message.chat.id,f' 👋 Привет {message.from_user.first_name}', reply_markup=markup)
+        bot.send_message(message.chat.id,f' 👋 Привет❗ {message.from_user.first_name}', reply_markup=markup)
     else:
-        bot.send_message(message.chat.id,text='Перекинул тебя в главном меню! Выбирай!', reply_markup=markup)
+        bot.send_message(message.chat.id,text='🟣Перекинул тебя в главном меню ⤴️❗ Выбирай ❗', reply_markup=markup)
 
 
 
@@ -58,7 +58,18 @@ def info(message):
     elif message.text =='✅ 📺 РЕМОНТ И ДИОГНОСТИКА БЫТОВОЙ ЭЛЕКТРОТЕХНИКИ❗🔧❗':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         file=open("bit3.jpg",'rb')
-        bot.send_photo(message.chat.id,file,'инфа\nинфа\nинфа\nинфа\nинфа\nинфа\nинфа\nинфа\nинфа\nинфа\n', reply_markup=markup)     
+        bot.send_photo(message.chat.id,file,'инфа\nинфа\nинфа\nинфа\nинфа\nинфа\nинфа\nинфа\nинфа\nинфа\n', reply_markup=markup)
+    elif message.text =='🟪 Истукан 🗿❗':
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        file=open("istukan.jpg",'rb')
+        bot.send_photo(message.chat.id,file,'', reply_markup=markup)
+        markup = types.InlineKeyboardMarkup()
+        url_button = types.InlineKeyboardButton(text='💰 Купить 🛍️ ', url='https://t.me/+Dga3bvvxL3M0NzRi')
+        url_button2 = types.InlineKeyboardButton(text='📌 Узнать о наличии товара❗ 📌', url='https://t.me/+Dga3bvvxL3M0NzRi')
+        markup.row(url_button,url_button2)
+        bot.send_message(message.chat.id,f'До сих пор в СМИ и не самой научной литературе продолжают мусолить тему «загадочных» истуканов острова Пасхи.\n С какой целью это делается? — В этом заинтересована туриндустрия, и сами островитяне.\n С тайнами и мистикой этот клочок земли становится в разы привлекательнее. \nВот туда и нарастает поток туристов. А местные работают в сфере их обслуживания; после того, как у них построили нормальную инфраструктуру, \nнаконец, могут сыто и спокойно жить (чего не могли позволить себе столетиями), постепенно растворяясь среди призжих чилийцев с материка',reply_markup=markup) 
+            
+
     else:
          bot.send_message(message.chat.id, answers[random.randint(0, 3)])
          
@@ -82,7 +93,7 @@ def ONAS(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     button56 = types.KeyboardButton('🟢 Написать нам 📞❗')
     button57 = types.KeyboardButton('⭕ Назад❗')
-    button55 = types.KeyboardButton('🟪 🌈🚀❗')
+    button55 = types.KeyboardButton('🟪 Истукан 🗿❗')
     button54 = types.KeyboardButton('🟪 🌈🚀❗')
     button53 = types.KeyboardButton('🟪 🌈🚀❗')
     button52 = types.KeyboardButton('🟪 🌈🚀❗')
@@ -113,7 +124,7 @@ def ONAS(message):
     markup.add(button42)
     markup.add(button41)
     markup.row(button56,button57)
-    bot.send_message(message.chat.id, ' бла бла бла ', reply_markup=markup)
+    bot.send_message(message.chat.id, '🟣 Выберите товар 🛍️', reply_markup=markup)
 
 
 bot.polling(none_stop=True)
